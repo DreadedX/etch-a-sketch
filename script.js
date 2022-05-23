@@ -24,7 +24,7 @@ slider.oninput = (e) => updateSliderValue(e.target.value);
 slider.onchange = (e) => changeSizeGrid(e.target.value);
 
 
-
+let showGrid = true
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
@@ -47,6 +47,7 @@ function setCurrentMode(newMode) {
 function toggleGridLines() {
     // not possible at this moment because gridElements are created locally in setupGrid()
     
+    showGrid = !showGrid
     return
 }
 
@@ -57,6 +58,9 @@ function setupGrid(size) {
 
     for (let i = 0; i < size * size; i++) {
         const gridElement = document.createElement('div');
+        if (showGrid) {
+            gridElement.classList.add("shown")
+        }
         gridElement.classList.add("grid-element");
         gridElement.addEventListener("mouseover", changeColor);
         gridElement.addEventListener("mousedown", changeColor);
