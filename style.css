@@ -89,6 +89,9 @@ button:hover {
 .grid-element {
     /* to prevent user from selecting grid elements when sketching */
     user-select: none;
-    border: 1px solid var(--gray);
     background-color: var(--lighter_gray);
+}
+
+.shown {
+    border: 1px solid var(--gray);
 }
