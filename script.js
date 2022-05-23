@@ -45,9 +45,8 @@ function setCurrentMode(newMode) {
 
 
 function toggleGridLines() {
-    // not possible at this moment because gridElements are created locally in setupGrid()
-    
     showGrid = !showGrid
+    reloadGrid()
     return
 }
 
